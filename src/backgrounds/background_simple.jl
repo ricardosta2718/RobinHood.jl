@@ -52,13 +52,14 @@ function Quiver_choice(quiverlabel)
     #α2(z) = @. -81 * π^2 * N * (z * iv(z,0,kk)+ kk * iv(z,kk,kk+qq)+kk/(P-kk-qq)*(P-z) * iv(z,kk+qq,P))
 
     #action_functions
-    @eval f(r) = @. (1 - μ/r^4 - q^2/r^6)
-    @eval F2(r,z) = @. - (α(z)/α2(z)) * r^4
-    @eval G2(r,z) = @. - α(z) / (α2(z)*f(r))
-    @eval S2(r,z) = @. r^2 / 6
+    @eval f(r) = @. 1 + 0*r
+    @eval F2(r,z) = @.  r^4 + 0*z
+    @eval G2(r,z) = @. 1+0*r + 0*z
+    @eval S2(r,z) = @. 0 + 0*r+0*z
     @eval F(r,z) = @. sqrt(F2(r,z))
     @eval G(r,z) = @. sqrt(G2(r,z))
     @eval S(r,z) = @. sqrt(S2(r,z))
     return
 end
+
 export Quiver_choice
