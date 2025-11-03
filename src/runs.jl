@@ -77,7 +77,7 @@ function Run_Multiple_Strings(filename,P_list,zstar_list)
                     prob = OptimizationProblem(optprob, c0, I,; lcons = eqconst, ucons = eqconst, lb = lbounds, ub = ubounds)
                     sol = solve(prob, IPNewton())#,g_tol=1e-12,x_tol=1e-4)
                     sols[i,:] = sol.u
-                    Eint[i] = SNG(sol.u,I)
+                    Eint[i] = SNG(sol.u,I)-2*rmax
                     if abs(sols[i,Int(end*3/4+0.5)]-(P/2))<0.15 && snapping==true
                         snap_flag=true
                     end
@@ -107,4 +107,5 @@ function Run_Multiple_Strings(filename,P_list,zstar_list)
 
     println("\nRun finished! Time for plotting!")
 end
+
 export Run_Multiple_Strings
