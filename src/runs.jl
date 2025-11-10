@@ -45,7 +45,7 @@ function Run_Multiple_Strings(filename,P_list,zstar_list)
 
     #preinitialization
     ll=60 #only even to make it work faster
-    Lint=(Array(range(cbrt(0.001),cbrt(0.1),length=30))).^3
+    Lint=(Array(range(cbrt(0.001),cbrt(0.1),length=50))).^3
 
     II=1:1:length(Lint)
     Eint=similar(Lint)
@@ -110,6 +110,7 @@ function Run_Multiple_Strings(filename,P_list,zstar_list)
 end
 
 export Run_Multiple_Strings
+
 
 
 
