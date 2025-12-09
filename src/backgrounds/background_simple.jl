@@ -53,9 +53,9 @@ function Quiver_choice(quiverlabel)
 
     #action_functions
     @eval f(r) = @. 1 + 0*r
-    @eval F2(r,z) = @. - (α(z)/α2(z)) * r^4
-    @eval G2(r,z) = @. - α(z) / (α2(z)*f(r))
-    @eval S2(r,z) = @. r^2 / 8 + 0*z
+    @eval F2(r,z) = @. r^4 + 0*z
+    @eval G2(r,z) = @. 1+0*r+0*z
+    @eval S2(r,z) = @. 0*r + 0*z
     @eval F(r,z) = @. sqrt(F2(r,z))
     @eval G(r,z) = @. sqrt(G2(r,z))
     @eval S(r,z) = @. sqrt(S2(r,z))
@@ -63,5 +63,6 @@ function Quiver_choice(quiverlabel)
 end
 
 export Quiver_choice
+
 
 
